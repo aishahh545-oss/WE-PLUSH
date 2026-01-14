@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WE PLUSH</title>
+
+<!-- GOOGLE FONT -->
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+	body{
+		margin:0;
+		font-family: 'fredoka', sans-serif;
+		background:#F7FDFC;
+		color:#333;
+	}
+
+	/* HEADER */
+	header{
+		background:#1ABC9C;
+		padding: 15px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header h1{
+		color:white;
+		margin:0;
+		font-size: 32px;
+		letter-spacing: 2px;
+	}
+
+	/* NAVIGATION */
+
+	nav a{
+		color: white;
+		text-decoration: none;
+		margin-left: 25px;
+		font-size: 16px;
+	}
+
+	nav a:hover{
+		text-decoration: underline;
+	}
+
+	/* MAIN CONTENT */
+
+	main{
+		padding:60px 30px;
+		text-align: center;
+	}
+
+	main h2{
+		color:#1ABC9C;
+		font-size: 32px;
+	}
+
+	main p{
+		font-size: 18px;
+		margin-top: 12px;
+		color: #555;
+	}
+
+	/* BUTTON */
+
+	.button{
+		display: inline-block;
+		margin-top: 25px;
+		padding: 12px 28px;
+		background: #FF6F61;
+		color: white;
+		text-decoration: none;
+		border-radius: 25px;
+		font-size: 16px;
+	}
+
+	.button:hover{
+		background: #FF5748;
+	}
+
+	/* BEST SELLING PRODUCTS */
+
+	.products-section{
+		margin-top: 60px;
+	}
+
+	.products-section h2{
+		margin-bottom: 15px;
+	}
+
+	.products-grid{
+		display: grid;
+		grid-template-columns:repeat(4,1fr);
+		gap: 20px;
+	}
+
+	.product-card{
+		background:white;
+		border-radius:10px;
+		padding:15px;
+		text-align:center;
+		box-shadow:0 4px 8px rgba(0,0,0,0.08);
+		transition:transform 0.3s;
+	}
+
+	.product-card:hover{
+		transform: translateY(-5px);
+	}
+
+	.product-card img{
+		width: 150px;
+		height: 150px;
+		object-fit: contain;
+		border-radius: 10px;
+		margin: 0 auto;
+		background: #F7F7F7;
+	}
+
+	.product-card h3{
+		margin: 12px 0 6px;
+		font-size: 18px;
+	}
+
+	.product-card p{
+		margin-bottom: 10px;
+		color: #777;
+	}
+
+	.product-card button{
+		background: #FF6F61;
+		border: none;
+		padding: 10px 16px;
+		border-radius: 20px;
+		color: #FFF;
+		cursor: pointer;
+		font-weight: bold;
+	}
+
+	.product-card button:hover{
+		background: #FF5748;
+	}
+
+	/* FOOTER */
+
+	footer{
+		background: #1ABC9C;
+		color: white;
+		text-align: center;
+		padding: 15px;
+	}
+
+	/* RESPONSIVE */
+
+	@media (max-width:1024px){
+		.products-grid{
+			grid-template-columns:repeat(2,1fr);
+		}
+	}
+
+	@media (max-width:480px){
+		.products-grid{
+			grid-template-columns:repeat(1,1fr);
+		}
+	}
+
+</style>
+</head>
+
+<body>
+
+	<header>
+		<div style="display:flex; align-items:center; gap:12px;">
+			<img src="weplush.png" alt="WE PLUSH LOGO" style="height:45px;">
+		<h1>WE PLUSH</h1>
+	</div>
+
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="shop.html">Shop</a>
+			<a href="cart.html">View Cart</a>
+			<a href="about.html">About</a>
+			<a href="contact.html">Contact</a>
+			<a href="review.html">Reviews</a>
+		</nav>
+	</header>
+
+	<main>
+		<h2>WELCOME TO WE PLUSH OFFICIAL STORE</h2>
+		<p>WE PLUSH - ONE TOUCH, BOOM OF CUTENESS</p>
+
+		<a href="shop.html" class="button">Shop Now</a>
+
+		<!-- BEST SELLING PRODUCTS -->
+
+		<section class="products-section">
+			<h2>BEST SELLING ITEMS</h2>
+			<div class="products-grid">
+
+				<!-- PRODUCT 1 -->
+
+				<div class="product-card">
+					<img src="black cat.jpeg" alt="Black Cat">
+					<h3>Black Cat</h3>
+					<p>RM 41.50</p>
+					<button onclick="addToCart('Black Cat',41.50)">Add to Cart</button>
+				</div>
+
+				<!-- PRODUCT 2 -->
+
+				<div class="product-card">
+					<img src="white bunny.jpeg" alt="White Bunny">
+					<h3>White Bunny</h3>
+					<p>RM 48.90</p>
+					<button onclick="addToCart('White Bunny',48.90)">Add to Cart</button>
+				</div>
+
+				<!-- PRODUCT 3 -->
+
+				<div class="product-card">
+					<img src="green alien.jpeg" alt="Green Alien">
+					<h3>Green Alien</h3>
+					<p>RM 99.30</p>
+					<button onclick="addToCart('Green Alien',99.30)">Add to Cart</button>
+				</div>
+
+				<!-- PRODUCT 4 -->
+
+				<div class="product-card">
+					<img src="pou.jpeg" alt="Pou">
+					<h3>Pou</h3>
+					<p>RM 89.70</p>
+					<button onclick="addToCart('Pou',89.70)">Add to Cart</button>
+				</div>
+
+				<!-- PRODUCT 5 -->
+
+				<div class="product-card">
+					<img src="blossom.jpg" alt="Blossom">
+					<h3>Blossom</h3>
+					<p>RM 30.90</p>
+					<button onclick="addToCart('Blossom',30.90)">Add to Cart</button>
+				</div>
+
+				<!-- PRODUCT 6 -->
+
+				<div class="product-card">
+					<img src="baby blonde.jpg" alt="Baby Blonde">
+					<h3>Baby Blonde</h3>
+					<p>RM 77.30</p>
+					<button onclick="addToCart('Baby Blonde',77.30)">Add to Cart</button>
+				</div>
+
+				<!-- PRODUCT 7 -->
+
+				<div class="product-card">
+					<img src="bubbles.jpg" alt="Bubbles">
+					<h3>Bubbles</h3>
+					<p>RM 21.60</p>
+					<button onclick="addToCart('Bubbles',21.60)">Add to Cart</button>
+				</div>
+
+				<!-- PRODUCT 8 -->
+
+				<div class="product-card">
+					<img src="bunny blossom.jpg" alt="Bunny Blossom">
+					<h3>Bunny Blossom</h3>
+					<p>RM 32.00</p>
+					<button onclick="addToCart('Bunny Blossom',32.00)">Add to Cart</button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<img src="devloop.png" alt="DEVLOOP LOGO" style="height:35px; margin-bottom:8px">
+		<br>
+		&copy 2026 WE PLUSH. All rights reserved.
+	</footer>
+
+	<script>
+    function addToCart(name, price){
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({productName:name, productPrice:price, quantity:1});
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WE PLUSH - Reviews</title>
+
+	<!-- GOOGLE FONT -->
+
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+	<style>
+		
+		html, body{
+			height: 100%;
+			margin: 0;
+		}
+
+		body{
+			font-family: 'Fredoka', sans-serif;
+			background: #F7FDFC;
+			display: flex;
+			flex-direction: column;
+			color: #333;
+		}
+
+		/* HEADER */
+
+		header{
+			background: #1ABC9C;
+			padding: 15px 30px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		header h1{
+			color: white;
+			margin: 0;
+			letter-spacing: 2px;
+		}
+
+		nav a{
+			color: white;
+			text-decoration: none;
+			margin: 20px;
+		}
+
+		nav a:hover{
+			text-decoration: underline;
+		}
+
+		/* MAIN */
+
+		main{
+			flex: 1;
+			padding: 50px 10%;
+		}
+
+		/* TITLE */
+
+		h2{
+			text-align: center;
+			color: #1ABC9C;
+			font-size: 32px;
+			margin-bottom: 10px;
+		}
+
+		.subtitle{
+			text-align: center;
+			margin-bottom: 40px;
+			font-size: 18px;
+		}
+
+		/* REVIEW GRID */
+
+		.review-card{
+			background: white;
+			padding: 25px;
+			border-radius: 20px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+			margin-bottom: 20px;
+		}
+
+		.review-card h4{
+			color: #FF6F61;
+			margin-bottom: 8px;
+		}
+
+		.stars{
+			color: #FF6F61;
+			margin-bottom: 10px;
+		}
+
+		.review-grid{
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 30px;
+		}
+
+		.review-card small{
+			color: #777;
+			font-size: 13px;
+		}
+
+		/* EMPTY */
+
+		.empty{
+			text-align: center;
+			font-size: 18px;
+			color: #777;
+		}
+
+		/* FOOTER */
+
+		footer{
+			background: #1ABC9C;
+			color: white;
+			text-align: center;
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<header>
+		<div style="display:flex; align-items:center; gap:12px;">
+			<img src="weplush.png" alt="WE PLUSH LOGO" style="height:45px;">
+		<h1>WE PLUSH</h1>
+	</div>
+
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="shop.html">Shop</a>
+			<a href="cart.html">View Cart</a>
+			<a href="about.html">About</a>
+			<a href="contact.html">Contact</a>
+			<a href="review.html">Reviews</a>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Customer Reviews</h2>
+		<p class="subtitle">See what our lovely customers are saying!</p>
+
+		<div style="text-align: center; margin-bottom: 30px;">
+			<button onClick="clearReviews()" style="
+			background: #FF6F61;
+			color:white;
+			border:none;
+			padding:10px 20px;
+			border-radius:20px;
+			cursor:pointer;
+			">
+
+			Clear All Reviews
+		</button>
+	</div>
+
+		<div class="review-grid" id="review-list"></div>
+		<p class="empty" id="empty-msg"></p>
+	</main>
+
+	<footer>
+		<img src="devloop.png" alt="DEVLOOP LOGO" style="height:35px; margin-bottom:8px">
+		<br>
+		&copy; 2026 WE PLUSH All rights reserved.
+	</footer>
+
+	<script>
+		let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+		let reviewList = document.getElementById("review-list");
+		let emptyMsg = document.getElementById("empty-msg");
+
+		if(reviews.length === 0){
+			emptyMsg.innerText = "No reviews yet. Be the first to share your experience!";
+		}else{
+			reviews.forEach(r =>{
+				let card = document.createElement("div");
+				card.className = "review-card";
+
+				let stars = "⭐".repeat(Number(r.rating));
+
+				card.innerHTML = `
+					<h4>${r.customer},</h4>
+					<div class="stars">${stars}</div>
+					<p>${r.message}</p>
+					<small>${r.time}</small>
+				`;
+
+				reviewList.appendChild(card);
+			});
+		}
+
+		function clearReviews(){
+			if(confirm("Are you sure you want to clear all Reviews?")){
+				localStorage.removeItem("reviews");
+				location.reload();
+			}
+		}
+	</script>
+
+</body>
+</html>

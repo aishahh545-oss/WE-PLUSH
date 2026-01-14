@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WE PLUSH - About Us</title>
+
+<!-- GOOGLE FONT -->
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+	/* STICKY FOOTER */
+
+	html, body{
+		height: 100%;
+		margin: 0;
+	}
+
+	body{
+		display: flex;
+		flex-direction: column;
+		font-family: 'Fredoka', sans-serif;
+		background: #F7FDFC;
+		color: #333;
+	}
+
+	main{
+		flex: 1;
+	}
+
+	/* HEADER */
+
+	header{
+		background: #1ABC9C;
+		padding: 15px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header h1{
+		color: white;
+		margin: 0;
+		font-size: 32px;
+	}
+
+	nav a{
+		color: white;
+		text-decoration: none;
+		margin-left: 25px;
+	}
+
+	/* HERO */
+
+	.hero{
+		background: linear-gradient(135deg, #1ABC9C, #A3E4D7);
+		color: white;
+		padding: 80px 30px;
+		text-align: center;
+	}
+
+	.hero h2{
+		font-size: 42px;
+		margin-bottom: 15px;
+	}
+
+	.hero p{
+		font-size: 18px;
+		max-width: 700px;
+		margin: auto;
+	}
+
+	/* SECTIONS */
+
+	.section{
+		max-width: 1000px;
+		margin: 60px auto;
+		padding: 0 30px;
+		text-align: center;
+	}
+
+	.cards{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 25px;
+		margin-top: 30px;
+	}
+
+	.card{
+		background: white;
+		padding: 25px;
+		border-radius: 15px;
+		box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+	}
+
+	.card h3{
+		color: #FF6F61;
+		margin-bottom: 10px;
+	}
+
+	/* CTA */
+
+	.cta{
+		background: #1ABC9C;
+		color: white;
+		padding: 40px 20px;
+		text-align: center;
+	}
+
+	.cta a{
+		display: inline-block;
+		margin-top: 20px;
+		background: #FF6F61;
+		color: white;
+		padding: 14px 28px;
+		border-radius: 30px;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	/* FOOTER */
+
+	footer{
+		background: #1ABC9C;
+		color: white;
+		text-align: center;
+		padding: 15px;
+	}
+
+	/* RESPONSIVE */
+
+	@media(max-width: 768px){
+		.cards{
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.hero h2{
+		font-size: 32px;
+	}
+}
+
+</style>
+</head>
+
+<body>
+
+	<!-- HEADER -->
+
+	<header>
+		<div style="display:flex; align-items:center; gap:12px;">
+			<img src="weplush.png" alt="WE PLUSH LOGO" style="height:45px;">
+		<h1>WE PLUSH</h1>
+	</div>
+
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="shop.html">Shop</a>
+			<a href="cart.html">View Cart</a>
+			<a href="about.html">About</a>
+			<a href="contact.html">Contact</a>
+			<a href="review.html">Reviews</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<!-- INTRODUCTION -->
+
+		<div class="hero">
+			<h2>More Than Just Plushies</h2>
+			<p>
+				WE PLUSH is your happy place for plushies, keychains, toys, and action figures. Made to bring smiles and comfort.
+			</p>
+		</div>
+
+		<div class="section">
+			<h2>Our Story</h2>
+			<p>
+				Founded in 2025, WE PLUSH started with one goal, to spread happiness through and meaningful products. Plushies are our heart, but fun comes in many forms.
+			</p>
+		</div>
+
+		<!-- VALUES -->
+
+		<div class="section">
+			<h2>Why People Love WE PLUSH</h2>
+
+			<div class="cards">
+				<div class="card">
+					<h3>Plushie First</h3>
+					<p>Our main focus is soft, hugable plushies you will adore.</p>
+				</div>
+
+				<div class="card">
+					<h3>Cute Collectibles</h3>
+					<p>Keychains, toys, and action figures for every fan/</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- CTA -->
+
+		<div class="cta">
+			<h2>Find Your New Favourite Today</h2>
+			<a href="shop.html">Shop Now</a>
+		</div>
+
+	</main>
+
+	<footer>
+		<img src="devloop.png" alt="DEVLOOP LOGO" style="height:35px; margin-bottom:8px">
+		<br>
+		&copy; 2026 WE PLUSH. All rights reserved.
+	</footer>
+
+</body>
+</html>

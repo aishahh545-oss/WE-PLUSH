@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WE PLUSH - Shop</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  body{
+    margin:0;
+    font-family: 'Fredoka', sans-serif;
+    background:#F7FDFC;
+    color:#333;
+  }
+
+  /* HEADER */
+  header{
+    background:#1ABC9C;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  header h1{
+    color:white;
+    margin:0;
+    font-size:32px;
+    letter-spacing:2px;
+  }
+
+  /* NAVIGATION */
+
+  nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:16px;
+  }
+
+  nav a:hover{
+    text-decoration:underline;
+  }
+
+  /* MAIN */
+  main{
+    padding:60px 30px;
+    text-align:center;
+  }
+
+  main h2{
+    font-size:32px;
+    color:#1ABC9C;
+    margin-bottom:10px;
+  }
+
+  main p{
+    margin-bottom:30px;
+    color:#777;
+  }
+
+  /* PRODUCT GRID */
+  .products-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+
+  .product-card{
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+
+  .product-card:hover{
+    transform: translateY(-5px);
+  }
+
+  .product-card img{
+    width:100%;
+    height:200px;
+    object-fit: contain;
+    border-radius:10px;
+    background:#F7F7F7;
+  }
+
+  .product-card h3{
+    margin:12px 0 6px;
+    font-size:18px;
+  }
+
+  .product-card p{
+    margin-bottom:10px;
+    color:#777;
+  }
+
+  .product-card button{
+    background:#FF6F61;
+    border:none;
+    padding:10px 16px;
+    border-radius:20px;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+  }
+
+  .product-card button:hover{
+    background:#FF5748;
+  }
+
+  /* FOOTER */
+  footer{
+    background:#1ABC9C;
+    color:white;
+    text-align:center;
+    padding:15px;
+  }
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .products-grid{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+
+  @media(max-width:480px){
+    .products-grid{
+      grid-template-columns:repeat(1,1fr);
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <header>
+   <div style="display:flex; align-items:center; gap:12px;">
+			<img src="weplush.png" alt="WE PLUSH LOGO" style="height:45px;">
+		<h1>WE PLUSH</h1>
+	</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">View Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="review.html">Reviews</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>ALL ITEMS</h2>
+    <p>WE PLUSH - ONE TOUCH, BOOM OF CUTENESS</p>
+
+    <div class="products-grid">
+      <!-- contoh beberapa products -->
+      <div class="product-card">
+        <img src="black cat.jpeg" alt="Black Cat">
+        <h3>Black Cat</h3>
+        <p>RM 41.50</p>
+        <button onclick="addToCart('Black Cat',41.50)">Add to Cart</button>
+
+      </div>
+      <div class="product-card">
+        <img src="white bunny.jpeg" alt="White Bunny">
+        <h3>White Bunny</h3>
+        <p>RM 48.90</p>
+        <button onclick="addToCart('White Bunny',48.90)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="green alien.jpeg" alt="Green Alien">
+        <h3>Green Alien</h3>
+        <p>RM 99.30</p>
+        <button onclick="addToCart('Green Alien',99.30)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="pou.jpeg" alt="Pou">
+        <h3>Pou</h3>
+        <p>RM 89.70</p>
+        <button onclick="addToCart('Pou',89.70)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="shimeji.jpeg" alt="Shimeji">
+        <h3>Shimeji</h3>
+        <p>RM 64.90</p>
+        <button onclick="addToCart('Shimeji',64.90)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="duck.jpeg" alt="Duck">
+        <h3>Duck</h3>
+        <p>RM 76.80</p>
+        <button onclick="addToCart('Duck',76.80)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="giant seal.jpeg" alt="Giant Seal">
+        <h3>Giant Seal</h3>
+        <p>RM 41.20</p>
+        <button onclick="addToCart('Giant Seal',41.20)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="capybara.jpeg" alt="Capybara">
+        <h3>Capybara</h3>
+        <p>RM 62.20</p>
+        <button onclick="addToCart('Capybara',62.20)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+      	<img src="banana duck.jpeg" alt="Banana Duck">
+      	<h3>Banana Duck</h3>
+      	<p>RM 37.00</p>
+      	<button onclick="addToCart('Banana Duck',37.00)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+		<img src="gray cat.jpeg" alt="Gray Cat">
+		<h3>Gray Cat</h3>
+		<p>RM 26.80</p>
+		<button onclick="addToCart('Gray Cat',26.80)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="shark.jpeg" alt="Shark">
+		<h3>Shark</h3>
+		<p>RM 82.50</p>
+		<button onclick="addToCart('Shark',82.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="platypus.jpeg" alt="Platypus">
+		<h3>Platypus</h3>
+		<p>RM 57.40</p>
+		<button onclick="addToCart('Platypus',57.40)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="strawberry cat.jpeg" alt="Strawberry Cat">
+		<h3>Strawberry Cat</h3>
+		<p>RM 91.90</p>
+		<button onclick="addToCart('Strawberry Cat',91.90)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+	  	<img src="elephant.jpeg" alt="Elephant">
+		<h3>Elephant</h3>
+		<p>RM 49.40</p>
+		<button onclick="addToCart('Elephant',49.40)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="snake.jpeg" alt="Snake">
+		<h3>Snake</h3>
+		<p>RM 83.00</p>
+		<button onclick="addToCart('Snake',83.00)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="rhinoceros.jpeg" alt="Rhinoceros">
+		<h3>Rhinoceros</h3>
+		<p>RM 89.50</p>
+		<button onclick="addToCart('Rhinoceros',89.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="totoro.jpeg" alt="Totoro">
+		<h3>Totoro</h3>
+		<p>RM 63.30</p>
+		<button onclick="addToCart('Totoro',63.30)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="nyanpan.jpeg" alt="Nyanpan">
+		<h3>Nyanpan</h3>
+		<p>RM 52.80</p>
+		<button onclick="addToCart('Nyanpan',52.80)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="hatsune miku.jpeg" alt="Hatsune Miku">
+		<h3>Hatsune Miku</h3>
+		<p>RM 64.50</p>
+		<button onclick="addToCart('Hatsune Miku',64.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="rat.jpeg" alt="Rat">
+		<h3>Rat</h3>
+		<p>RM 78.50</p>
+		<button onclick="addToCart('Rat',78.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="fat brown bear.jpeg" alt="Fat Brown Bear">
+		<h3>Fat Brown Bear</h3>
+		<p>RM 85.90</p>
+		<button onclick="addToCart('Fat Brown Bear',85.90)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="gojo satoru.jpeg" alt="Gojo Satoru">
+		<h3>Gojo Satoru</h3>
+		<p>RM 59.30</p>
+		<button onclick="addToCart('Gojo Satoru',59.30)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="saiki k.jpeg" alt="Saiki K">
+		<h3>Saiki Kusuo</h3>
+		<p>RM 28.30</p>
+		<button onclick="addToCart('Saiki Kusuo',28.30)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="geto suguru.jpeg" alt="Geto Suguru">
+		<h3>Geto Suguru</h3>
+		<p>RM 71.10</p>
+		<button onclick="addToCart('Geto Suguru',71.10)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="mob.jpeg" alt="Mob">
+		<h3>Mob</h3>
+		<p>RM 77.70</p>
+		<button onclick="addToCart('Mob',77.70)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="oikawa.jpeg" alt="Oikawa Tooru">
+		<h3>Oikawa Tooru</h3>
+		<p>RM 40.50</p>
+		<button onclick="addToCart('Oikawa Tooru',40.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="rin.jpeg" alt="Rin">
+		<h3>Itoshi Rin</h3>
+		<p>RM 47.10</p>
+		<button onclick="addToCart('Itoshi Rin',47.10)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="toge.jpeg" alt="Toge">
+		<h3>Inumaki Toge</h3>
+		<p>RM 57.30</p>
+		<button onclick="addToCart('Inumaki Toge',57.30)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="korosensei.jpeg" alt="Korosensei">
+		<h3>Korosensei</h3>
+		<p>RM 81.40</p>
+		<button onclick="addToCart('Korosensei',81.10)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="snorlaxx.jpeg" alt="Snorlaxx">
+		<h3>Snorlaxx</h3>
+		<p>RM 56.00</p>
+		<button onclick="addToCart('Snorlaxx',56.00)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="duolingo.jpeg" alt="Duolingo">
+		<h3>Duolingo</h3>
+		<p>RM 87.60</p>
+		<button onclick="addToCart('Duolingo',87.60)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="zenitsu.jpeg" alt="Zenitsu">
+		<h3>Agatsuma Zenitsu</h3>
+		<p>RM 17.50</p>
+		<button onclick="addToCart('Agatsuma Zenitsu',17.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="rengoku.jpeg" alt="Rengoku">
+		<h3>Rengoku Kyojuro</h3>
+		<p>RM 95.10</p>
+		<button onclick="addToCart('Rengoku Kyojuro',95.10)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="sabito.jpeg" alt="Sabito">
+		<h3>Sabito</h3>
+		<p>RM 89.10</p>
+		<button onclick="addToCart('Sabito',89.10)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="tanjiro.jpeg" alt="Tanjiro">
+		<h3>Kamado Tanjiro</h3>
+		<p>RM 87.90</p>
+		<button onclick="addToCart('Kamado Tanjiro',87.90)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="bakugo.jpeg" alt="Bakugo">
+		<h3>Bakugo Katsuki</h3>
+		<p>RM 93.30</p>
+		<button onclick="addToCart('Bakugo Katsuki',93.30)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="denki.jpeg" alt="Denki">
+		<h3>Kaminari Denki</h3>
+		<p>RM 39.10</p>
+		<button onclick="addToCart('Kaminari Denki',39.10)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="leorio.jpeg" alt="Leorio">
+		<h3>Leorio</h3>
+		<p>RM 62.30</p>
+		<button onclick="addToCart('Leorio',62.30)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="chrollo.jpeg" alt="Chrollo">
+		<h3>Chrollo</h3>
+		<p>RM 82.70</p>
+		<button onclick="addToCart('Chrollo',82.70)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="kite.jpeg" alt="Kite">
+		<h3>Kite</h3>
+		<p>RM 49.50</p>
+		<button onclick="addToCart('Kite',49.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="blossom.jpg" alt="Blossom">
+		<h3>Blossom</h3>
+		<p>RM 30.90</p>
+		<button onclick="addToCart('Blossom',30.90)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="baby blonde.jpg" alt="Baby Blonde">
+		<h3>Baby Blonde</h3>
+		<p>RM 77.30</p>
+		<button onclick="addToCart('Baby Blonde',77.30)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="bubbles.jpg" alt="Bubbles">
+		<h3>Bubbles</h3>
+		<p>RM 21.60</p>
+		<button onclick="addToCart('Bubbles',21.60)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="bunny blossom.jpg" alt="Bunny Blossom">
+		<h3>Bunny Blossom</h3>
+		<p>RM 32.00</p>
+		<button onclick="addToCart('Bunny Blossom',32.00)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="buttercup.jpg" alt="Buttercup">
+		<h3>Buttercup</h3>
+		<p>RM 65.20</p>
+		<button onclick="addToCart('Buttercup',65.20)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="dimoo.jpg" alt="Dimoo">
+		<h3>Dimoo</h3>
+		<p>RM 96.50</p>
+		<button onclick="addToCart('Dimoo',96.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="dirty bunny.jpeg" alt="Dirty Bunny">
+		<h3>Dirty Bunny</h3>
+		<p>RM 96.80</p>
+		<button onclick="addToCart('Dirty Bunny',96.80)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="freezing magic.jpg" alt="Freezing magic">
+		<h3>Freezing Magic</h3>
+		<p>RM 82.80</p>
+		<button onclick="addToCart('Freezing Magic',82.80)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="fuzzy bear.jpg" alt="Fuzzy Bear">
+		<h3>Fuzzy Bear</h3>
+		<p>RM 72.60</p>
+		<button onclick="addToCart('Fuzzy Bear',72.60)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="have a hot boba.jpg" alt="Have A Hot Boba">
+		<h3>Have A Hot Boba</h3>
+		<p>RM 36.00</p>
+		<button onclick="addToCart('Have A Hot Boba',36.00)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="lonely puppet.jpg" alt="Lonely Puppet">
+		<h3>Lonely Puppet</h3>
+		<p>RM 51.90</p>
+		<button onclick="addToCart('Lonely Puppet',51.90)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="magical bunny.jpg" alt="Magical Bunny">
+		<h3>Magical Bunny</h3>
+		<p>RM 26.50</p>
+		<button onclick="addToCart('Magical Bunny',26.50)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="sheep.jpeg" alt="Sheep">
+		<h3>Sheep</h3>
+		<p>RM 35.60</p>
+		<button onclick="addToCart('Sheep',35.60)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="sun.jpeg" alt="Sun">
+		<h3>Sun</h3>
+		<p>RM 96.10</p>
+		<button onclick="addToCart('Sun',96.10)">Add to Cart</button>
+	  </div>
+
+	  <div class="product-card">
+		<img src="teddy.jpeg" alt="Teddy">
+		<h3>Teddy</h3>
+		<p>RM 20.00</p>
+		<button onclick="addToCart('Teddy',20.00)">Add to Cart</button>
+	  </div>
+
+	</div>
+  </main>
+
+  <footer>
+  	<img src="devloop.png" alt="DEVLOOP LOGO" style="height:35px; margin-bottom:8px">
+		<br>
+    &copy; 2026 WE PLUSH. All rights reserved.
+  </footer>
+
+  <!-- ADD TO CART SCRIPT -->
+
+  <script>
+    function addToCart(name, price){
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({productName:name, productPrice:price, quantity:1});
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    }
+  </script>
+
+</body>
+</html>

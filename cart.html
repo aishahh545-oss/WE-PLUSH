@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WE PLUSH - Cart</title>
+
+<!-- GOOGLE FONT -->
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+	/* STICKY FOOTER */
+
+	html, body{
+		height: 100%;
+		margin: 0;
+	}
+
+	body{
+		display: flex;
+		flex-direction: column;
+	}
+
+	main{
+		flex: 1;
+	}
+
+	/* ORIGINAL STYLE */
+
+	body{
+		margin: 0;
+		font-family: fredoka, sans-serif;
+		background: #F7FDFC;
+		color:#333;
+	}
+
+	/* HEADER */
+
+	header{
+		background: #1ABC9C;
+		padding: 15px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header h1{
+		color:white;
+		margin:0;
+		font-size: 32px;
+		letter-spacing: 2px;
+	}
+
+	/* NAVIGATION */
+
+	nav a{
+		color: white;
+		text-decoration: none;
+		margin-left: 25px;
+		font-size: 16px;
+	}
+
+	nav a:hover{
+		text-decoration: underline;
+	}
+
+	/* CART TABLE */
+
+	table{
+		width: 100%;
+		border-collapse: collapse;
+		margin-top: 20px;
+		background: white;
+	}
+
+	th, td{
+		border: 1px solid #ddd;
+		padding: 12px;
+		text-align: center;
+	}
+
+	th{
+		background: #1ABC9C;
+		color: white;
+	}
+
+	.total{
+		margin-top: 20px;
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/* BUTTON */
+
+	button{
+		margin-top: 20px;
+		padding: 10px 20px;
+		background: #FF6F61;
+		color: white;
+		border: none;
+		cursor: pointer;
+		border-radius: 20px;
+	}
+
+	button:hover{
+		background: #FF5748;
+	}
+
+	.empty{
+		margin-top: 20px;
+		font-size: 18px;
+		color: #777;
+	}
+
+	/* FOOTER */
+
+	footer{
+		background: #1ABC9C;
+		color: white;
+		text-align: center;
+		padding: 15px;
+	}
+
+</style>
+</head>
+
+<body>
+	
+	<!-- HEADER / NAVIGATION-->
+
+	<header>
+		<div style="display:flex; align-items:center; gap:12px;">
+			<img src="weplush.png" alt="WE PLUSH LOGO" style="height:45px;">
+		<h1>WE PLUSH</h1>
+	</div>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="shop.html">Shop</a>
+			<a href="cart.html">View Cart</a>
+			<a href="about.html">About</a>
+			<a href="contact.html">Contact</a>
+			<a href="review.html">Reviews</a>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Your Cart</h2>
+
+		<table id= "cart-table">
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Price (RM)</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody id="cart-items"> <!-- ITEMS AKAN MASUK SINI -->
+			</tbody>
+		</table>
+
+		<div class="total" id="total-price"></div>
+
+		<button onclick="clearCart()">Clear Cart</button>
+
+		<div class="empty" id="empty-msg"></div>
+	</main>
+
+	<script>
+		let cart = JSON.parse(localStorage.getItem("cart")) || [];
+		let cartItems = document.getElementById("cart-items");
+		let totalPrice = document.getElementById("total-price");
+		let emptyMsg = document.getElementById("empty-msg");
+
+		let total = 0;
+
+		if(cart.length === 0){
+			document.getElementById("cart-table").style.display = "none";
+			emptyMsg.innerText = "Your cart is empty";
+		}else{
+			cart.forEach(item => {
+				let row = document.createElement("tr");
+
+				row.innerHTML = `
+				<td>${item.productName}</td>
+				<td>${item.productPrice.toFixed(2)}</td>
+				<td>${item.quantity}</td>
+				`;
+
+				cartItems.appendChild(row);
+				total += item.productPrice * item.quantity;
+			});
+
+			totalPrice.innerText = "Total: RM " + total.toFixed(2);
+		}
+
+		function clearCart(){
+			localStorage.removeItem("cart");
+			location.reload();
+		}
+	</script>
+
+	<footer>
+		<img src="devloop.png" alt="DEVLOOP LOGO" style="height:35px; margin-bottom:8px">
+		<br>
+	&copy 2026 WE PLUSH. All rights reserved.
+</footer>
+
+</body>
+</html>
